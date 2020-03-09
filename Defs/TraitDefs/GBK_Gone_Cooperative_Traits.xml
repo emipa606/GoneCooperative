@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>GBKT_Taskmaster</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Taskmaster</label>
+        <description>{PAWN_nameDef} hates doing work themselves and prefers to assign burdensome tasks to others. Why do it yourself when you are skilled at leading others to do it for you?</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<WorkSpeedGlobal>-0.60</WorkSpeedGlobal>
+			<MentalBreakThreshold>-0.08</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_MeleeCommander</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Melee Commander</label>
+        <description>{PAWN_nameDef} will always lead the charge into battle at the front lines, and other battlers are inspired by their courage and skill.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MeleeDodgeChance>0.15</MeleeDodgeChance>
+			<MeleeHitChance>0.15</MeleeHitChance>
+			<ShootingAccuracyPawn>-0.50</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_Bodyguard</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Guardian</label>
+        <description>{PAWN_nameDef} has sworn to always protect those within arms reach.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MentalBreakThreshold>-0.08</MentalBreakThreshold>
+			<PainShockThreshold>0.25</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_Teacher</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Teacher</label>
+        <description>Others often go to {PAWN_nameDef} to learn and improve their own skills. {PAWN_pronoun} is so good at passing on knowledge, in fact, that they end up spending all of their time doing so - and nothing else.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<GlobalLearningFactor>-0.50</GlobalLearningFactor>
+        </statOffsets>
+		<skillGains>
+			<li><key>Shooting</key><value>1</value></li>
+			<li><key>Melee</key><value>1</value></li>
+			<li><key>Construction</key><value>1</value></li>
+			<li><key>Mining</key><value>1</value></li>
+			<li><key>Cooking</key><value>1</value></li>
+			<li><key>Plants</key><value>1</value></li>
+			<li><key>Animals</key><value>1</value></li>
+			<li><key>Crafting</key><value>1</value></li>
+			<li><key>Artistic</key><value>1</value></li>
+			<li><key>Medicine</key><value>1</value></li>
+			<li><key>Social</key><value>1</value></li>
+			<li><key>Intellectual</key><value>1</value></li>
+		</skillGains>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_Gibbering</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Gibbering</label>
+        <description>{PAWN_nameDef}'s babble will lead others down the path to madness.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_ResearchAssistant</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Research Assistant</label>
+        <description>{PAWN_nameDef} is very good at finding random bits of information but not so good at piecing it all together, relying on others for the final step.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<ResearchSpeed>-1.00</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_BeastMaster</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Beast Master</label>
+        <description>{PAWN_nameDef} forms a strong working bond with animals, causing them to trust {PAWN_pronoun} immensely and vigorously follow pronoun's every command.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_Outrider</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Outrider</label>
+        <description>Creatures naturally trust {PAWN_nameDef}, making {PAWN_pronoun} good at riding animals and leading animals in a charge.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+				<AnimalGatherSpeed>-0.4</AnimalGatherSpeed>
+				<AnimalGatherYield>-0.4</AnimalGatherYield>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_PlayLeader</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Play Leader</label>
+        <description>{PAWN_nameDef} knows how to make any game truly fun! Under {PAWN_pronoun}, everyone has more fun while playing games, and learns more from them as a result.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_CheerLeader</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Cheer Leader</label>
+        <description>{PAWN_nameDef} is so cheerful that is is nearly impossible to be upset around {PAWN_pronoun}'s smile. However, being this peppy all the time takes a lot of energy.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<HungerRateMultiplier>0.50</HungerRateMultiplier>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_CreativePlanner</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Creative Planner</label>
+        <description>{PAWN_nameDef} is constantly full of great ideas, but isn't able to execute hem on their own.  {PAWN_pronoun} spends many restless nights dreaming up pronoun's next great plan, though needs the help of Pronoun's friends to achieve them.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<RestRateMultiplier>-0.20</RestRateMultiplier>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_FireBrigadier</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Fire Brigadier</label>
+        <description>{PAWN_nameDef} is very wary of fires and the damage they can do. {PAWN_pronoun} also knows just what to do to stop one. Only {PAWN_pronoun} can prevent colony fires.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_SpasticFool</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Spastic Fool</label>
+        <description>{PAWN_nameDef}'s crazy and wild antics distract friend and foe alike.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MeleeHitChance>-15</MeleeHitChance>
+			<AimingDelayFactor>0.25</AimingDelayFactor>
+			<WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Blabbermouth</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Blabbermouth</label>
+        <description>{PAWN_nameDef} likes to snoop and gossip about everyone all the time... every day... every hour. It is impossible for the others on the map to not know everyone else's best (and worst) secrets.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Damsel</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Damsel</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Damsel</label>
+        <description>When {PAWN_nameDef} is in trouble, the rest of the colony works harder.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MeleeHitChance>-100</MeleeHitChance>
+			<ShootingAccuracyPawn>-100</ShootingAccuracyPawn>
+			<SocialImpact>25</SocialImpact>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Sterilizer</li>
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Sterilizer</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Sterilizer</label>
+        <description>{PAWN_nameDef} has an obsessive need to keep EVERYTHING. SPOTLESS. No germs allowed! But at least it is easier to treat illness and injuries in such a clean environment.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MedicalOperationSpeed>-0.75</MedicalOperationSpeed>
+			<MedicalTendSpeed>-0.75</MedicalTendSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>GBKT_Taskmaster</li>
+		<li>GBKT_MeleeCommander</li>
+		<li>GBKT_Bodyguard</li>
+		<li>GBKT_Teacher</li>
+		<li>GBKT_Gibbering</li>
+		<li>GBKT_ResearchAssistant</li>
+		<li>GBKT_BeastMaster</li>
+		<li>GBKT_Outrider</li>
+		<li>GBKT_PlayLeader</li>
+		<li>GBKT_CreativePlanner</li>
+		<li>GBKT_CheerLeader</li>
+		<li>GBKT_FireBrigadier</li>
+		<li>GBKT_SpasticFool</li>
+		<li>GBKT_Blabbermouth</li>
+		<li>GBKT_Damsel</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+</Defs>

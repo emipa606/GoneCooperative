@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>e95c7707-206e-4d2a-ab91-0987cd6d1046</ID>
   <ModName>Gone Cooperative (Continued)</ModName>
-  <Version>1.0.3.0</Version>
+  <Version>1.0.4.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,6 +12,7 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+
 
 
 

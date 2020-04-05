@@ -182,13 +182,20 @@ namespace GBKT_Defs
                                     //TEACHER
                                     if (GBKT_TraitDef[i] == GBKT_DefinitionTypes.GBKT_DefinitionTypes_Traits.GBKT_Teacher)
                                     {
-                                        if (possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Sight) > 0f && possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                                        if(possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Sight) == 0f)
                                         {
-                                            bool tryThisHediff = HediffGiverUtility.TryApply(possibleFacPawn, GBKT_DefinitionTypes.GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
+                                            continue;
                                         }
-                                        if (possibleFacPawn.story.adulthood.baseDesc == null && possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Sight) > 0f && possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                                        if (possibleFacPawn.health.capacities.GetLevel(GBKT_DefinitionTypes.GBTK_DefinitionTypes_CapacityDeff.Hearing) == 0f)
                                         {
-                                            bool tryThisHediff = HediffGiverUtility.TryApply(possibleFacPawn, GBKT_DefinitionTypes.GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
+                                            continue;
+                                        }
+
+                                        if (possibleFacPawn.story.adulthood != null)
+                                        {
+                                            HediffGiverUtility.TryApply(possibleFacPawn, GBKT_DefinitionTypes.GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
+                                        } else { 
+                                            HediffGiverUtility.TryApply(possibleFacPawn, GBKT_DefinitionTypes.GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
                                         }
                                     }
                                     //RESEARCH ASSISTANT 

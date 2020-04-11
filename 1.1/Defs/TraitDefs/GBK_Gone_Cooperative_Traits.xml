@@ -3,7 +3,7 @@
 
   <TraitDef>
     <defName>GBKT_Taskmaster</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Taskmaster</label>
@@ -38,7 +38,7 @@
   
   <TraitDef>
     <defName>GBKT_MeleeCommander</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Melee Commander</label>
@@ -74,7 +74,7 @@
   
   <TraitDef>
     <defName>GBKT_Bodyguard</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Guardian</label>
@@ -109,7 +109,7 @@
   
   <TraitDef>
     <defName>GBKT_Teacher</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Teacher</label>
@@ -157,7 +157,7 @@
   
   <TraitDef>
     <defName>GBKT_Gibbering</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Gibbering</label>
@@ -190,7 +190,7 @@
   
   <TraitDef>
     <defName>GBKT_ResearchAssistant</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Research Assistant</label>
@@ -224,7 +224,7 @@
   
   <TraitDef>
     <defName>GBKT_BeastMaster</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Beast Master</label>
@@ -257,7 +257,7 @@
   
   <TraitDef>
     <defName>GBKT_Outrider</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Outrider</label>
@@ -292,7 +292,7 @@
   
   <TraitDef>
     <defName>GBKT_PlayLeader</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Play Leader</label>
@@ -325,7 +325,7 @@
 
   <TraitDef>
     <defName>GBKT_CheerLeader</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Cheer Leader</label>
@@ -359,7 +359,7 @@
 
   <TraitDef>
     <defName>GBKT_CreativePlanner</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Creative Planner</label>
@@ -393,7 +393,7 @@
 
   <TraitDef>
     <defName>GBKT_FireBrigadier</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Fire Brigadier</label>
@@ -426,7 +426,7 @@
 
   <TraitDef>
     <defName>GBKT_SpasticFool</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Spastic Fool</label>
@@ -462,7 +462,7 @@
 
   <TraitDef>
     <defName>GBKT_Blabbermouth</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Blabbermouth</label>
@@ -495,7 +495,7 @@
 
   <TraitDef>
     <defName>GBKT_Damsel</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Damsel</label>
@@ -531,7 +531,7 @@
 
   <TraitDef>
     <defName>GBKT_Sterilizer</defName>
-    <commonality>1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>Sterilizer</label>

@@ -1,6 +1,0 @@
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Assemblies\GwenModGoneALeadin.dll
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Assemblies\GwenModGoneALeadin.pdb
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Source\GwenModGoneALeadin\obj\Debug\GwenModGoneCooperative.csprojAssemblyReference.cache
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Source\GwenModGoneALeadin\obj\Debug\GwenModGoneCooperative.csproj.CoreCompileInputs.cache
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Source\GwenModGoneALeadin\obj\Debug\GwenModGoneALeadin.dll
-E:\Steam\SteamApps\common\RimWorld\Mods\0 Gone Leading\Source\GwenModGoneALeadin\obj\Debug\GwenModGoneALeadin.pdb

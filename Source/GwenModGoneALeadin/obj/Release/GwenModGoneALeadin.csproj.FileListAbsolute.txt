@@ -1,8 +1,0 @@
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\1.1\Assemblies\GwenModGoneALeadin.dll
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\Source\GwenModGoneALeadin\obj\Release\GwenModGoneALeadin.GeneratedMSBuildEditorConfig.editorconfig
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\Source\GwenModGoneALeadin\obj\Release\GwenModGoneALeadin.AssemblyInfoInputs.cache
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\Source\GwenModGoneALeadin\obj\Release\GwenModGoneALeadin.AssemblyInfo.cs
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\Source\GwenModGoneALeadin\obj\Release\GwenModGoneALeadin.csproj.CoreCompileInputs.cache
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\Source\GwenModGoneALeadin\obj\Release\GwenModGoneALeadin.dll
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\1.2\Assemblies\GwenModGoneALeadin.dll
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\0-Gone-Cooperative\1.3\Assemblies\GwenModGoneALeadin.dll

@@ -22,8 +22,4 @@ public static class GBKT_DefinitionTypes_Traits
     public static TraitDef GBKT_Damsel;
 
     public static TraitDef GBKT_Sterilizer;
-    /*
-     * 
-     * 
-     * */
 }

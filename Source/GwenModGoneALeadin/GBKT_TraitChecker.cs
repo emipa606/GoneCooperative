@@ -9,14 +9,13 @@ namespace GBKT_Defs;
 
 public class GBKT_TraitChecker : WorldComponent
 {
-    private readonly List<BodyPartDef> GBKT_BodyPartDef = new List<BodyPartDef>();
+    private readonly List<BodyPartDef> GBKT_BodyPartDef = [];
     private readonly TraitDef[] GBKT_TraitDef = new TraitDef[16];
     private List<Map> maps;
 
     public GBKT_TraitChecker(World world) : base(world)
     {
-        //GBKT_BodyPartDef.Add(BodyPartDefOf.Body);
-        GBKT_BodyPartDef.Add(BodyPartDefOf.Brain);
+        GBKT_BodyPartDef.Add(DefDatabase<BodyPartDef>.GetNamedSilentFail("Brain"));
         GBKT_TraitDef[0] = GBKT_DefinitionTypes_Traits.GBKT_Taskmaster;
         GBKT_TraitDef[1] = GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander;
         GBKT_TraitDef[2] = GBKT_DefinitionTypes_Traits.GBKT_CheerLeader;
@@ -57,7 +56,7 @@ public class GBKT_TraitChecker : WorldComponent
                     {
                         if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) > 0f)
                         {
-                            var unused = HediffGiverUtility.TryApply(pawn,
+                            _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_GibberingBase, GBKT_BodyPartDef);
                         }
                     }
@@ -77,13 +76,13 @@ public class GBKT_TraitChecker : WorldComponent
                         var room = pawn.GetRoom(RegionType.Set_Passable);
                         if (PawnsCurrentJob == "Clean" && room.Role != RoomRoleDefOf.Hospital)
                         {
-                            var unused = HediffGiverUtility.TryApply(pawn,
+                            _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_SterilizerCleaning, GBKT_BodyPartDef);
                         }
 
                         if (PawnsCurrentJob == "Clean" && room.Role == RoomRoleDefOf.Hospital)
                         {
-                            var unused = HediffGiverUtility.TryApply(pawn,
+                            _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_SterilizerCleaning2, GBKT_BodyPartDef);
                         }
                     }
@@ -100,7 +99,7 @@ public class GBKT_TraitChecker : WorldComponent
                             {
                                 if (possibleFacPawn != pawn)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_CreativePlannerNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -117,7 +116,7 @@ public class GBKT_TraitChecker : WorldComponent
                                 if (PawnsCurrentJob == "TriggerFirefoamPopper" || PawnsCurrentJob == "BeatFire" ||
                                     PawnsCurrentJob == "ExtinguishSelf")
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
                                 }
 
@@ -130,7 +129,7 @@ public class GBKT_TraitChecker : WorldComponent
                                 if (PawnsCurrentJob2 == "TriggerFirefoamPopper" || PawnsCurrentJob2 == "BeatFire" ||
                                     PawnsCurrentJob2 == "ExtinguishSelf")
                                 {
-                                    var unused = HediffGiverUtility.TryApply(pawn,
+                                    _ = HediffGiverUtility.TryApply(pawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -144,7 +143,7 @@ public class GBKT_TraitChecker : WorldComponent
                             //DAMSEL
                             if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Damsel && pawn.Downed)
                             {
-                                var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_DamselInTrouble, GBKT_BodyPartDef);
                             }
 
@@ -158,7 +157,7 @@ public class GBKT_TraitChecker : WorldComponent
 
                                 if (PawnsCurrentJob == "TendPatient" && possibleFacPawn.CurJob.targetA == pawn)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_DamselBeingTended, GBKT_BodyPartDef);
                                 }
                             }
@@ -177,7 +176,7 @@ public class GBKT_TraitChecker : WorldComponent
                                     0f && possibleFacPawn.health.capacities.GetLevel(
                                         GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_TaskmasterNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -190,7 +189,7 @@ public class GBKT_TraitChecker : WorldComponent
                                     possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
                                         .Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_MeleeCommanderNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -202,7 +201,7 @@ public class GBKT_TraitChecker : WorldComponent
                                     0f && possibleFacPawn.health.capacities.GetLevel(
                                         GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_CheerLeaderNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -218,7 +217,7 @@ public class GBKT_TraitChecker : WorldComponent
 
                                 if (PawnsCurrentJoyKind != "Null")
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_PlayLeaderNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -238,17 +237,17 @@ public class GBKT_TraitChecker : WorldComponent
                                     possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
                                         .Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
                                 }
 
-                                if (possibleFacPawn.story.adulthood.baseDesc == null &&
+                                if (possibleFacPawn.story.Adulthood.baseDesc == null &&
                                     possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
                                         .Sight) > 0f &&
                                     possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
                                         .Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
                                 }
                             }
@@ -256,7 +255,7 @@ public class GBKT_TraitChecker : WorldComponent
                             //RESEARCH ASSISTANT 
                             if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_ResearchAssistant)
                             {
-                                var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_ResearchAssistantNear, GBKT_BodyPartDef);
                             }
 
@@ -264,7 +263,7 @@ public class GBKT_TraitChecker : WorldComponent
                             if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
                             {
                                 var PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
-                                var unused1 = pawn.CurJobDef.ToString();
+                                _ = pawn.CurJobDef.ToString();
                                 var room = pawn.GetRoom(RegionType.Set_Passable);
                                 if (possibleFacPawn.CurJobDef != null)
                                 {
@@ -273,14 +272,14 @@ public class GBKT_TraitChecker : WorldComponent
 
                                 if (!pawn.Downed && !pawn.InBed() && PawnsCurrentJob == "TendPatient")
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby, GBKT_BodyPartDef);
                                 }
 
                                 if (!pawn.Downed && !pawn.InBed() && possibleFacPawn.InBed() &&
                                     room.Role == RoomRoleDefOf.Hospital)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby2, GBKT_BodyPartDef);
                                 }
                             }
@@ -295,7 +294,7 @@ public class GBKT_TraitChecker : WorldComponent
                             {
                                 if (pawn.Drafted)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_SpasticFoolNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -312,7 +311,7 @@ public class GBKT_TraitChecker : WorldComponent
                                     0f && possibleFacPawn.health.capacities.GetLevel(
                                         GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_GibberingNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -329,7 +328,7 @@ public class GBKT_TraitChecker : WorldComponent
                                     0f && possibleFacPawn.health.capacities.GetLevel(
                                         GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
                                 {
-                                    var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_BlabbermouthNear, GBKT_BodyPartDef);
                                 }
                             }
@@ -344,7 +343,7 @@ public class GBKT_TraitChecker : WorldComponent
                             //CALVARY MASTER
                             if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
                             {
-                                var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_OutriderNear, GBKT_BodyPartDef);
                             }
                         }
@@ -358,7 +357,7 @@ public class GBKT_TraitChecker : WorldComponent
                             //CALVARY MASTER
                             if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
                             {
-                                var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_OutriderAdjacent, GBKT_BodyPartDef);
                             }
                         }
@@ -373,17 +372,17 @@ public class GBKT_TraitChecker : WorldComponent
                                 var directRelations = possibleFacPawn.relations.DirectRelations;
                                 foreach (var directPawnRelation in directRelations)
                                 {
-                                    var unused1 = directPawnRelation.otherPawn;
+                                    _ = directPawnRelation.otherPawn;
                                     if (directPawnRelation.def == PawnRelationDefOf.Bond)
                                     {
-                                        var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_BeastMasterNear, GBKT_BodyPartDef);
                                     }
 
                                     if (directPawnRelation.def == PawnRelationDefOf.Bond &&
                                         pawn.CurJob.targetA.Equals(possibleFacPawn))
                                     {
-                                        var unused = HediffGiverUtility.TryApply(pawn,
+                                        _ = HediffGiverUtility.TryApply(pawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_BeastMasterWorkingWithBondeds,
                                             GBKT_BodyPartDef);
                                     }
@@ -409,7 +408,7 @@ public class GBKT_TraitChecker : WorldComponent
                             0f && possibleFacPawn.health.capacities.GetLevel(
                                 GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
                         {
-                            var unused = HediffGiverUtility.TryApply(possibleFacPawn,
+                            _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_BodyguardNear, GBKT_BodyPartDef);
                         }
                     }

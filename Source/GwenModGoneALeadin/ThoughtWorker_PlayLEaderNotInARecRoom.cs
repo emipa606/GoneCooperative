@@ -6,6 +6,8 @@ namespace GBKT_Gone_Cooperative_ThoughtWorkers;
 
 public class ThoughtWorker_PlayLEaderNotInARecRoom : ThoughtWorker
 {
+    private static readonly RoomRoleDef recRoom = DefDatabase<RoomRoleDef>.GetNamed("RecRoom");
+
     protected override ThoughtState CurrentStateInternal(Pawn pawn)
     {
         var room = pawn.GetRoom(RegionType.Set_Passable);
@@ -24,11 +26,6 @@ public class ThoughtWorker_PlayLEaderNotInARecRoom : ThoughtWorker
             return ThoughtState.Inactive;
         }
 
-        if (room.Role == RoomRoleDefOf.RecRoom)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        return ThoughtState.ActiveAtStage(0);
+        return room.Role == recRoom ? ThoughtState.Inactive : ThoughtState.ActiveAtStage(0);
     }
 }

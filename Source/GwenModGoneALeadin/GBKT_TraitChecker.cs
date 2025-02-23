@@ -43,6 +43,7 @@ public class GBKT_TraitChecker : WorldComponent
             foreach (var pawn in pawns)
             {
                 //Log.Error("this runs");
+                var pawnAwake = pawn.Awake();
 
                 foreach (var traitDef in GBKT_TraitDef)
                 {
@@ -64,9 +65,9 @@ public class GBKT_TraitChecker : WorldComponent
                     if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CreativePlanner)
                     {
                         var randomNumber = Random.Range(1, 1000);
-                        if (randomNumber == 1 && !pawn.Awake())
+                        if (randomNumber == 1 && !pawnAwake)
                         {
-                            pawn.Awake();
+                            RestUtility.WakeUp(pawn);
                         }
                     }
 
@@ -89,66 +90,76 @@ public class GBKT_TraitChecker : WorldComponent
 
                     foreach (var possibleFacPawn in pawns)
                     {
-                        //ALLIED COLONISTS RANGE 25
-                        if (possibleFacPawn.Position.DistanceTo(pawn.Position) < 26 && !pawn.InMentalState &&
-                            !possibleFacPawn.InMentalState && possibleFacPawn.Awake() && pawn.Awake() &&
-                            pawn.Faction == possibleFacPawn.Faction && !possibleFacPawn.RaceProps.Animal)
+                        if (possibleFacPawn != pawn && possibleFacPawn.story?.traits?.HasTrait(traitDef) == true)
                         {
-                            //CREATIVE PLANNER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CreativePlanner)
+                            // Ignore other pawns that has the same trait as they will give themselves the effect
+                            continue;
+                        }
+
+                        var range = possibleFacPawn.Position.DistanceTo(pawn.Position);
+                        var possiblePawnAwake = possibleFacPawn.Awake();
+
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CreativePlanner ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_FireBrigadier)
+                            //ALLIED COLONISTS RANGE 25
+                        {
+                            if (range < 26 && !pawn.InMentalState && !possibleFacPawn.InMentalState &&
+                                possiblePawnAwake && pawnAwake && pawn.Faction == possibleFacPawn.Faction &&
+                                !possibleFacPawn.RaceProps.Animal)
                             {
-                                if (possibleFacPawn != pawn)
+                                //CREATIVE PLANNER
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CreativePlanner)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_CreativePlannerNear, GBKT_BodyPartDef);
-                                }
-                            }
-
-                            //Fire Brigadier   
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_FireBrigadier)
-                            {
-                                var PawnsCurrentJob = "Null";
-                                if (possibleFacPawn.CurJobDef != null)
-                                {
-                                    PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    if (possibleFacPawn != pawn)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_CreativePlannerNear, GBKT_BodyPartDef);
+                                    }
                                 }
 
-                                if (PawnsCurrentJob == "TriggerFirefoamPopper" || PawnsCurrentJob == "BeatFire" ||
-                                    PawnsCurrentJob == "ExtinguishSelf")
+                                //Fire Brigadier   
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_FireBrigadier)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
-                                }
+                                    var PawnsCurrentJob = "Null";
+                                    if (possibleFacPawn.CurJobDef != null)
+                                    {
+                                        PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    }
 
-                                var PawnsCurrentJob2 = "Null";
-                                if (pawn.CurJobDef != null)
-                                {
-                                    PawnsCurrentJob2 = possibleFacPawn.CurJobDef.ToString();
-                                }
+                                    if (PawnsCurrentJob is "TriggerFirefoamPopper" or "BeatFire" or "ExtinguishSelf")
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
+                                    }
 
-                                if (PawnsCurrentJob2 == "TriggerFirefoamPopper" || PawnsCurrentJob2 == "BeatFire" ||
-                                    PawnsCurrentJob2 == "ExtinguishSelf")
-                                {
-                                    _ = HediffGiverUtility.TryApply(pawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
+                                    var PawnsCurrentJob2 = "Null";
+                                    if (pawn.CurJobDef != null)
+                                    {
+                                        PawnsCurrentJob2 = possibleFacPawn.CurJobDef.ToString();
+                                    }
+
+                                    if (PawnsCurrentJob2 is "TriggerFirefoamPopper" or "BeatFire" or "ExtinguishSelf")
+                                    {
+                                        _ = HediffGiverUtility.TryApply(pawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
+                                    }
                                 }
                             }
                         }
 
-                        //ALLIED COLONISTS RANGE 25 damsel
-                        if (possibleFacPawn.Position.DistanceTo(pawn.Position) < 26 && !pawn.InMentalState &&
-                            !possibleFacPawn.InMentalState && possibleFacPawn.Awake() &&
-                            pawn.Faction == possibleFacPawn.Faction)
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Damsel)
                         {
-                            //DAMSEL
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Damsel && pawn.Downed)
+                            //ALLIED COLONISTS RANGE 25 damsel
+                            if (range < 26 && !pawn.InMentalState && !possibleFacPawn.InMentalState &&
+                                possiblePawnAwake && pawn.Faction == possibleFacPawn.Faction)
                             {
-                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                    GBKT_DefinitionTypes_Hediff.GBKT_DamselInTrouble, GBKT_BodyPartDef);
-                            }
+                                //DAMSEL
+                                if (pawn.Downed)
+                                {
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                        GBKT_DefinitionTypes_Hediff.GBKT_DamselInTrouble, GBKT_BodyPartDef);
+                                }
 
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Damsel)
-                            {
                                 var PawnsCurrentJob = "Null";
                                 if (possibleFacPawn.CurJobDef != null)
                                 {
@@ -163,134 +174,145 @@ public class GBKT_TraitChecker : WorldComponent
                             }
                         }
 
-                        //ALLIED COLONISTS RANGE 10
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 11 &&
-                            pawn.Faction == possibleFacPawn.Faction && !possibleFacPawn.RaceProps.Animal &&
-                            !pawn.InMentalState && possibleFacPawn.Awake() && !possibleFacPawn.InMentalState &&
-                            pawn.Awake())
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Taskmaster ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_CheerLeader ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_PlayLeader)
+                            //ALLIED COLONISTS RANGE 10
                         {
-                            //TASKMASTER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Taskmaster)
+                            if (possibleFacPawn != pawn && range < 11 && pawn.Faction == possibleFacPawn.Faction &&
+                                !possibleFacPawn.RaceProps.Animal && !pawn.InMentalState && possiblePawnAwake &&
+                                !possibleFacPawn.InMentalState && pawnAwake)
                             {
-                                if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                    0f && possibleFacPawn.health.capacities.GetLevel(
-                                        GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                                //TASKMASTER
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Taskmaster)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_TaskmasterNear, GBKT_BodyPartDef);
-                                }
-                            }
-
-                            //MELEE COMMANDER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander)
-                            {
-                                if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Sight) > 0f ||
-                                    possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Hearing) > 0f)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_MeleeCommanderNear, GBKT_BodyPartDef);
-                                }
-                            }
-
-                            //CHEER LEADER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CheerLeader)
-                            {
-                                if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                    0f && possibleFacPawn.health.capacities.GetLevel(
-                                        GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_CheerLeaderNear, GBKT_BodyPartDef);
-                                }
-                            }
-
-                            //PLAY LEADER 
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_PlayLeader)
-                            {
-                                var PawnsCurrentJoyKind = "Null";
-                                if (possibleFacPawn.CurJobDef.joyKind != null)
-                                {
-                                    PawnsCurrentJoyKind = possibleFacPawn.CurJobDef.joyKind.ToString();
+                                    if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
+                                        0f && possibleFacPawn.health.capacities.GetLevel(
+                                            GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_TaskmasterNear, GBKT_BodyPartDef);
+                                    }
                                 }
 
-                                if (PawnsCurrentJoyKind != "Null")
+                                //MELEE COMMANDER
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_PlayLeaderNear, GBKT_BodyPartDef);
+                                    if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Sight) > 0f ||
+                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Hearing) > 0f)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_MeleeCommanderNear, GBKT_BodyPartDef);
+                                    }
+                                }
+
+                                //CHEER LEADER
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CheerLeader)
+                                {
+                                    if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
+                                        0f && possibleFacPawn.health.capacities.GetLevel(
+                                            GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_CheerLeaderNear, GBKT_BodyPartDef);
+                                    }
+                                }
+
+                                //PLAY LEADER 
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_PlayLeader)
+                                {
+                                    var PawnsCurrentJoyKind = "Null";
+                                    if (possibleFacPawn.CurJobDef.joyKind != null)
+                                    {
+                                        PawnsCurrentJoyKind = possibleFacPawn.CurJobDef.joyKind.ToString();
+                                    }
+
+                                    if (PawnsCurrentJoyKind != "Null")
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_PlayLeaderNear, GBKT_BodyPartDef);
+                                    }
                                 }
                             }
                         }
 
-                        //ALLIED COLONISTS RANGE 5
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 6 &&
-                            !pawn.InMentalState && !possibleFacPawn.InMentalState && possibleFacPawn.Awake() &&
-                            pawn.Awake() && pawn.Faction == possibleFacPawn.Faction &&
-                            !possibleFacPawn.RaceProps.Animal)
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Teacher ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_ResearchAssistant ||
+                            traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
+
+                            //ALLIED COLONISTS RANGE 5
                         {
-                            //TEACHER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Teacher)
+                            if (possibleFacPawn != pawn && range < 6 &&
+                                !pawn.InMentalState && !possibleFacPawn.InMentalState && possiblePawnAwake &&
+                                pawnAwake && pawn.Faction == possibleFacPawn.Faction &&
+                                !possibleFacPawn.RaceProps.Animal)
                             {
-                                if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Sight) > 0f &&
-                                    possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Hearing) > 0f)
+                                //TEACHER
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Teacher)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
+                                    if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Sight) > 0f &&
+                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Hearing) > 0f)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
+                                    }
+
+                                    if (possibleFacPawn.story.Adulthood.baseDesc == null &&
+                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Sight) > 0f &&
+                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
+                                            .Hearing) > 0f)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
+                                    }
                                 }
 
-                                if (possibleFacPawn.story.Adulthood.baseDesc == null &&
-                                    possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Sight) > 0f &&
-                                    possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                        .Hearing) > 0f)
+                                //RESEARCH ASSISTANT 
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_ResearchAssistant)
                                 {
                                     _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
-                                }
-                            }
-
-                            //RESEARCH ASSISTANT 
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_ResearchAssistant)
-                            {
-                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                    GBKT_DefinitionTypes_Hediff.GBKT_ResearchAssistantNear, GBKT_BodyPartDef);
-                            }
-
-                            //Sterilizer
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
-                            {
-                                var PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
-                                _ = pawn.CurJobDef.ToString();
-                                var room = pawn.GetRoom(RegionType.Set_Passable);
-                                if (possibleFacPawn.CurJobDef != null)
-                                {
-                                    PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                        GBKT_DefinitionTypes_Hediff.GBKT_ResearchAssistantNear, GBKT_BodyPartDef);
                                 }
 
-                                if (!pawn.Downed && !pawn.InBed() && PawnsCurrentJob == "TendPatient")
+                                //Sterilizer
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
                                 {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby, GBKT_BodyPartDef);
-                                }
+                                    var PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    _ = pawn.CurJobDef.ToString();
+                                    var room = pawn.GetRoom(RegionType.Set_Passable);
+                                    if (possibleFacPawn.CurJobDef != null)
+                                    {
+                                        PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    }
 
-                                if (!pawn.Downed && !pawn.InBed() && possibleFacPawn.InBed() &&
-                                    room.Role == RoomRoleDefOf.Hospital)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby2, GBKT_BodyPartDef);
+                                    if (!pawn.Downed && !pawn.InBed() && PawnsCurrentJob == "TendPatient")
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby, GBKT_BodyPartDef);
+                                    }
+
+                                    if (!pawn.Downed && !pawn.InBed() && possibleFacPawn.InBed() &&
+                                        room.Role == RoomRoleDefOf.Hospital)
+                                    {
+                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                            GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby2, GBKT_BodyPartDef);
+                                    }
                                 }
                             }
                         }
 
-                        //ALL PAWNS RANGE 2
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 3 &&
-                            possibleFacPawn.Awake() && pawn.Awake())
+                        //GBKT_SpasticFool
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_SpasticFool)
                         {
-                            //GIBBERING
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_SpasticFool)
+                            //ALL PAWNS RANGE 2
+                            if (possibleFacPawn != pawn && range < 3 &&
+                                possiblePawnAwake && pawnAwake)
                             {
                                 if (pawn.Drafted)
                                 {
@@ -300,12 +322,12 @@ public class GBKT_TraitChecker : WorldComponent
                             }
                         }
 
-                        //ALL PAWNS RANGE 10
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 11 &&
-                            !possibleFacPawn.RaceProps.Animal && possibleFacPawn.Awake() && pawn.Awake())
+                        //GIBBERING
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Gibbering)
                         {
-                            //GIBBERING
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Gibbering)
+                            //ALL PAWNS RANGE 10
+                            if (possibleFacPawn != pawn && range < 11 &&
+                                !possibleFacPawn.RaceProps.Animal && possiblePawnAwake && pawnAwake)
                             {
                                 if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
                                     0f && possibleFacPawn.health.capacities.GetLevel(
@@ -317,12 +339,12 @@ public class GBKT_TraitChecker : WorldComponent
                             }
                         }
 
-                        //ALL PAWNS RANGE 100
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 100 &&
-                            !possibleFacPawn.RaceProps.Animal && possibleFacPawn.Awake() && pawn.Awake())
+                        //GBKT_Blabbermouth
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Blabbermouth)
                         {
-                            //GIBBERING
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Blabbermouth)
+                            //ALL PAWNS RANGE 100
+                            if (possibleFacPawn != pawn && range < 100 &&
+                                !possibleFacPawn.RaceProps.Animal && possiblePawnAwake && pawnAwake)
                             {
                                 if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
                                     0f && possibleFacPawn.health.capacities.GetLevel(
@@ -334,40 +356,40 @@ public class GBKT_TraitChecker : WorldComponent
                             }
                         }
 
-                        //ALLIED ANIMALS RANGE 10
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 11 &&
-                            pawn.Faction == possibleFacPawn.Faction && possibleFacPawn.RaceProps.Animal &&
-                            !pawn.InMentalState && possibleFacPawn.Awake() && !possibleFacPawn.InMentalState &&
-                            pawn.Awake())
+                        //CALVARY MASTER
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
                         {
-                            //CALVARY MASTER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
+                            //ALLIED ANIMALS RANGE 10
+                            if (possibleFacPawn != pawn && range < 11 &&
+                                pawn.Faction == possibleFacPawn.Faction && possibleFacPawn.RaceProps.Animal &&
+                                !pawn.InMentalState && possiblePawnAwake && !possibleFacPawn.InMentalState &&
+                                pawnAwake)
                             {
                                 _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_OutriderNear, GBKT_BodyPartDef);
                             }
                         }
 
-                        //ALLIED ANIMALS RANGE 1
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 1 &&
-                            pawn.Faction == possibleFacPawn.Faction && possibleFacPawn.RaceProps.Animal &&
-                            !pawn.InMentalState && possibleFacPawn.Awake() && !possibleFacPawn.InMentalState &&
-                            pawn.Awake())
+                        //CALVARY MASTER
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
                         {
-                            //CALVARY MASTER
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Outrider)
+                            //ALLIED ANIMALS RANGE 1
+                            if (possibleFacPawn != pawn && range < 1 &&
+                                pawn.Faction == possibleFacPawn.Faction && possibleFacPawn.RaceProps.Animal &&
+                                !pawn.InMentalState && possiblePawnAwake && !possibleFacPawn.InMentalState &&
+                                pawnAwake)
                             {
                                 _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                     GBKT_DefinitionTypes_Hediff.GBKT_OutriderAdjacent, GBKT_BodyPartDef);
                             }
                         }
 
-                        //ALLIED ANIMALS RANGE 100
-                        if (possibleFacPawn != pawn && possibleFacPawn.Position.DistanceTo(pawn.Position) < 100 &&
-                            possibleFacPawn.RaceProps.Animal && pawn.Faction == possibleFacPawn.Faction)
+                        //BEAST MASTER  
+                        if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_BeastMaster)
                         {
-                            //BEAST MASTER  
-                            if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_BeastMaster)
+                            //ALLIED ANIMALS RANGE 100
+                            if (possibleFacPawn != pawn && range < 100 &&
+                                possibleFacPawn.RaceProps.Animal && pawn.Faction == possibleFacPawn.Faction)
                             {
                                 var directRelations = possibleFacPawn.relations.DirectRelations;
                                 foreach (var directPawnRelation in directRelations)
@@ -390,16 +412,16 @@ public class GBKT_TraitChecker : WorldComponent
                             }
                         }
 
-                        //ALLIED PAWNS RANGE 1
-                        if (possibleFacPawn == pawn || !(possibleFacPawn.Position.DistanceTo(pawn.Position) < 2) ||
-                            pawn.InMentalState || possibleFacPawn.InMentalState || !possibleFacPawn.Awake() ||
-                            !pawn.Awake() || possibleFacPawn.HostileTo(pawn))
+                        //BODYGUARD
+                        if (traitDef != GBKT_DefinitionTypes_Traits.GBKT_Bodyguard)
                         {
                             continue;
                         }
 
-                        //BODYGUARD
-                        if (traitDef != GBKT_DefinitionTypes_Traits.GBKT_Bodyguard)
+                        //ALLIED PAWNS RANGE 1
+                        if (possibleFacPawn == pawn || !(range < 2) ||
+                            pawn.InMentalState || possibleFacPawn.InMentalState || !possiblePawnAwake ||
+                            !pawnAwake || possibleFacPawn.HostileTo(pawn))
                         {
                             continue;
                         }

@@ -1,4 +1,7 @@
 # Changelog for GoneCooperative
 
+1.5.2 - Fixed issues with two instances of the same trait bugging out
+
+
 1.5.1 - Updated to 1.5
 

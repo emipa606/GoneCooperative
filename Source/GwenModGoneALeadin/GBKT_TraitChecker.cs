@@ -42,7 +42,6 @@ public class GBKT_TraitChecker : WorldComponent
             var pawns = map.mapPawns.AllPawnsSpawned;
             foreach (var pawn in pawns)
             {
-                //Log.Error("this runs");
                 var pawnAwake = pawn.Awake();
 
                 foreach (var traitDef in GBKT_TraitDef)
@@ -55,7 +54,8 @@ public class GBKT_TraitChecker : WorldComponent
 
                     if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Gibbering)
                     {
-                        if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) > 0f)
+                        if (pawn.health?.capacities?.CapableOf(GBTK_DefinitionTypes_CapacityDeff.Talking) == true &&
+                            pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) > 0f)
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_GibberingBase, GBKT_BodyPartDef);
@@ -96,7 +96,22 @@ public class GBKT_TraitChecker : WorldComponent
                             continue;
                         }
 
+                        var canSee =
+                            possibleFacPawn.health?.capacities?.CapableOf(GBTK_DefinitionTypes_CapacityDeff.Sight) ==
+                            true &&
+                            possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Sight) > 0;
+
+                        var canHear =
+                            possibleFacPawn.health?.capacities?.CapableOf(GBTK_DefinitionTypes_CapacityDeff.Hearing) ==
+                            true && possibleFacPawn.health.capacities.GetLevel(
+                                GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0;
+
+                        var canSpeak = pawn.health?.capacities?.CapableOf(GBTK_DefinitionTypes_CapacityDeff.Talking) ==
+                            true && possibleFacPawn.health.capacities.GetLevel(
+                                GBTK_DefinitionTypes_CapacityDeff.Talking) > 0;
+
                         var range = possibleFacPawn.Position.DistanceTo(pawn.Position);
+
                         var possiblePawnAwake = possibleFacPawn.Awake();
 
                         if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CreativePlanner ||
@@ -185,40 +200,24 @@ public class GBKT_TraitChecker : WorldComponent
                                 !possibleFacPawn.InMentalState && pawnAwake)
                             {
                                 //TASKMASTER
-                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Taskmaster)
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Taskmaster && canSee && canHear)
                                 {
-                                    if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                        0f && possibleFacPawn.health.capacities.GetLevel(
-                                            GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
-                                    {
-                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                            GBKT_DefinitionTypes_Hediff.GBKT_TaskmasterNear, GBKT_BodyPartDef);
-                                    }
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                        GBKT_DefinitionTypes_Hediff.GBKT_TaskmasterNear, GBKT_BodyPartDef);
                                 }
 
                                 //MELEE COMMANDER
-                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander)
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_MeleeCommander && canSee && canHear)
                                 {
-                                    if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Sight) > 0f ||
-                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Hearing) > 0f)
-                                    {
-                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                            GBKT_DefinitionTypes_Hediff.GBKT_MeleeCommanderNear, GBKT_BodyPartDef);
-                                    }
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                        GBKT_DefinitionTypes_Hediff.GBKT_MeleeCommanderNear, GBKT_BodyPartDef);
                                 }
 
                                 //CHEER LEADER
-                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CheerLeader)
+                                if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_CheerLeader && canSpeak && canHear)
                                 {
-                                    if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                        0f && possibleFacPawn.health.capacities.GetLevel(
-                                            GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
-                                    {
-                                        _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                            GBKT_DefinitionTypes_Hediff.GBKT_CheerLeaderNear, GBKT_BodyPartDef);
-                                    }
+                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                        GBKT_DefinitionTypes_Hediff.GBKT_CheerLeaderNear, GBKT_BodyPartDef);
                                 }
 
                                 //PLAY LEADER 
@@ -253,20 +252,13 @@ public class GBKT_TraitChecker : WorldComponent
                                 //TEACHER
                                 if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Teacher)
                                 {
-                                    if (possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Sight) > 0f &&
-                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Hearing) > 0f)
+                                    if (canSee && canHear)
                                     {
                                         _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear, GBKT_BodyPartDef);
                                     }
 
-                                    if (possibleFacPawn.story.Adulthood.baseDesc == null &&
-                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Sight) > 0f &&
-                                        possibleFacPawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff
-                                            .Hearing) > 0f)
+                                    if (possibleFacPawn.story?.Adulthood?.baseDesc == null && canSee && canHear)
                                     {
                                         _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_TeacherNear2, GBKT_BodyPartDef);
@@ -312,13 +304,10 @@ public class GBKT_TraitChecker : WorldComponent
                         {
                             //ALL PAWNS RANGE 2
                             if (possibleFacPawn != pawn && range < 3 &&
-                                possiblePawnAwake && pawnAwake)
+                                possiblePawnAwake && pawnAwake && pawn.Drafted)
                             {
-                                if (pawn.Drafted)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_SpasticFoolNear, GBKT_BodyPartDef);
-                                }
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    GBKT_DefinitionTypes_Hediff.GBKT_SpasticFoolNear, GBKT_BodyPartDef);
                             }
                         }
 
@@ -326,16 +315,11 @@ public class GBKT_TraitChecker : WorldComponent
                         if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Gibbering)
                         {
                             //ALL PAWNS RANGE 10
-                            if (possibleFacPawn != pawn && range < 11 &&
-                                !possibleFacPawn.RaceProps.Animal && possiblePawnAwake && pawnAwake)
+                            if (possibleFacPawn != pawn && range < 11 && !possibleFacPawn.RaceProps.Animal &&
+                                possiblePawnAwake && pawnAwake && canSpeak && canHear)
                             {
-                                if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                    0f && possibleFacPawn.health.capacities.GetLevel(
-                                        GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_GibberingNear, GBKT_BodyPartDef);
-                                }
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    GBKT_DefinitionTypes_Hediff.GBKT_GibberingNear, GBKT_BodyPartDef);
                             }
                         }
 
@@ -344,15 +328,11 @@ public class GBKT_TraitChecker : WorldComponent
                         {
                             //ALL PAWNS RANGE 100
                             if (possibleFacPawn != pawn && range < 100 &&
-                                !possibleFacPawn.RaceProps.Animal && possiblePawnAwake && pawnAwake)
+                                !possibleFacPawn.RaceProps.Animal && possiblePawnAwake && pawnAwake && canSpeak &&
+                                canHear)
                             {
-                                if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                                    0f && possibleFacPawn.health.capacities.GetLevel(
-                                        GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
-                                {
-                                    _ = HediffGiverUtility.TryApply(possibleFacPawn,
-                                        GBKT_DefinitionTypes_Hediff.GBKT_BlabbermouthNear, GBKT_BodyPartDef);
-                                }
+                                _ = HediffGiverUtility.TryApply(possibleFacPawn,
+                                    GBKT_DefinitionTypes_Hediff.GBKT_BlabbermouthNear, GBKT_BodyPartDef);
                             }
                         }
 
@@ -426,9 +406,7 @@ public class GBKT_TraitChecker : WorldComponent
                             continue;
                         }
 
-                        if (pawn.health.capacities.GetLevel(GBTK_DefinitionTypes_CapacityDeff.Talking) >
-                            0f && possibleFacPawn.health.capacities.GetLevel(
-                                GBTK_DefinitionTypes_CapacityDeff.Hearing) > 0f)
+                        if (canSpeak && canHear)
                         {
                             _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_BodyguardNear, GBKT_BodyPartDef);

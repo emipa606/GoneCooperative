@@ -1,5 +1,8 @@
 # Changelog for GoneCooperative
 
+1.5.3 - SHould work better with races that have non normal backstories, like ve androids
+
+
 1.5.2 - Fixed issues with two instances of the same trait bugging out
 
 

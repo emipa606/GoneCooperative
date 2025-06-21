@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Beast Master -->
+  <GBKT_BeastMaster.degreeDatas.Beast_Master.label>Beast Master</GBKT_BeastMaster.degreeDatas.Beast_Master.label>
+  <!-- EN: {PAWN_nameDef} forms a strong working bond with animals, causing them to trust {PAWN_pronoun} immensely and vigorously follow pronoun's every command. -->
+  <GBKT_BeastMaster.degreeDatas.Beast_Master.description>{PAWN_nameDef} forms a strong working bond with animals, causing them to trust {PAWN_pronoun} immensely and vigorously follow pronoun's every command.</GBKT_BeastMaster.degreeDatas.Beast_Master.description>
+  <!-- EN: Blabbermouth -->
+  <GBKT_Blabbermouth.degreeDatas.Blabbermouth.label>Blabbermouth</GBKT_Blabbermouth.degreeDatas.Blabbermouth.label>
+  <!-- EN: {PAWN_nameDef} likes to snoop and gossip about everyone all the time... every day... every hour. It is impossible for the others on the map to not know everyone else's best (and worst) secrets. -->
+  <GBKT_Blabbermouth.degreeDatas.Blabbermouth.description>{PAWN_nameDef} likes to snoop and gossip about everyone all the time... every day... every hour. It is impossible for the others on the map to not know everyone else's best (and worst) secrets.</GBKT_Blabbermouth.degreeDatas.Blabbermouth.description>
+  <!-- EN: Guardian -->
+  <GBKT_Bodyguard.degreeDatas.Guardian.label>Guardian</GBKT_Bodyguard.degreeDatas.Guardian.label>
+  <!-- EN: {PAWN_nameDef} has sworn to always protect those within arms reach. -->
+  <GBKT_Bodyguard.degreeDatas.Guardian.description>{PAWN_nameDef} has sworn to always protect those within arms reach.</GBKT_Bodyguard.degreeDatas.Guardian.description>
+  <!-- EN: Cheer Leader -->
+  <GBKT_CheerLeader.degreeDatas.Cheer_Leader.label>Cheer Leader</GBKT_CheerLeader.degreeDatas.Cheer_Leader.label>
+  <!-- EN: {PAWN_nameDef} is so cheerful that is is nearly impossible to be upset around {PAWN_pronoun}'s smile. However, being this peppy all the time takes a lot of energy. -->
+  <GBKT_CheerLeader.degreeDatas.Cheer_Leader.description>{PAWN_nameDef} is so cheerful that is is nearly impossible to be upset around {PAWN_pronoun}'s smile. However, being this peppy all the time takes a lot of energy.</GBKT_CheerLeader.degreeDatas.Cheer_Leader.description>
+  <!-- EN: Creative Planner -->
+  <GBKT_CreativePlanner.degreeDatas.Creative_Planner.label>Creative Planner</GBKT_CreativePlanner.degreeDatas.Creative_Planner.label>
+  <!-- EN: {PAWN_nameDef} is constantly full of great ideas, but isn't able to execute hem on their own.  {PAWN_pronoun} spends many restless nights dreaming up pronoun's next great plan, though needs the help of Pronoun's friends to achieve them. -->
+  <GBKT_CreativePlanner.degreeDatas.Creative_Planner.description>{PAWN_nameDef} is constantly full of great ideas, but isn't able to execute hem on their own.  {PAWN_pronoun} spends many restless nights dreaming up pronoun's next great plan, though needs the help of Pronoun's friends to achieve them.</GBKT_CreativePlanner.degreeDatas.Creative_Planner.description>
+  <!-- EN: Damsel -->
+  <GBKT_Damsel.degreeDatas.Damsel.label>Damsel</GBKT_Damsel.degreeDatas.Damsel.label>
+  <!-- EN: When {PAWN_nameDef} is in trouble, the rest of the colony works harder. -->
+  <GBKT_Damsel.degreeDatas.Damsel.description>When {PAWN_nameDef} is in trouble, the rest of the colony works harder.</GBKT_Damsel.degreeDatas.Damsel.description>
+  <!-- EN: Fire Brigadier -->
+  <GBKT_FireBrigadier.degreeDatas.Fire_Brigadier.label>Fire Brigadier</GBKT_FireBrigadier.degreeDatas.Fire_Brigadier.label>
+  <!-- EN: {PAWN_nameDef} is very wary of fires and the damage they can do. {PAWN_pronoun} also knows just what to do to stop one. Only {PAWN_pronoun} can prevent colony fires. -->
+  <GBKT_FireBrigadier.degreeDatas.Fire_Brigadier.description>{PAWN_nameDef} is very wary of fires and the damage they can do. {PAWN_pronoun} also knows just what to do to stop one. Only {PAWN_pronoun} can prevent colony fires.</GBKT_FireBrigadier.degreeDatas.Fire_Brigadier.description>
+  <!-- EN: Gibbering -->
+  <GBKT_Gibbering.degreeDatas.Gibbering.label>Gibbering</GBKT_Gibbering.degreeDatas.Gibbering.label>
+  <!-- EN: {PAWN_nameDef}'s babble will lead others down the path to madness. -->
+  <GBKT_Gibbering.degreeDatas.Gibbering.description>{PAWN_nameDef}'s babble will lead others down the path to madness.</GBKT_Gibbering.degreeDatas.Gibbering.description>
+  <!-- EN: Melee Commander -->
+  <GBKT_MeleeCommander.degreeDatas.Melee_Commander.label>Melee Commander</GBKT_MeleeCommander.degreeDatas.Melee_Commander.label>
+  <!-- EN: {PAWN_nameDef} will always lead the charge into battle at the front lines, and other battlers are inspired by their courage and skill. -->
+  <GBKT_MeleeCommander.degreeDatas.Melee_Commander.description>{PAWN_nameDef} will always lead the charge into battle at the front lines, and other battlers are inspired by their courage and skill.</GBKT_MeleeCommander.degreeDatas.Melee_Commander.description>
+  <!-- EN: Outrider -->
+  <GBKT_Outrider.degreeDatas.Outrider.label>Outrider</GBKT_Outrider.degreeDatas.Outrider.label>
+  <!-- EN: Creatures naturally trust {PAWN_nameDef}, making {PAWN_pronoun} good at riding animals and leading animals in a charge. -->
+  <GBKT_Outrider.degreeDatas.Outrider.description>Creatures naturally trust {PAWN_nameDef}, making {PAWN_pronoun} good at riding animals and leading animals in a charge.</GBKT_Outrider.degreeDatas.Outrider.description>
+  <!-- EN: Play Leader -->
+  <GBKT_PlayLeader.degreeDatas.Play_Leader.label>Play Leader</GBKT_PlayLeader.degreeDatas.Play_Leader.label>
+  <!-- EN: {PAWN_nameDef} knows how to make any game truly fun! Under {PAWN_pronoun}, everyone has more fun while playing games, and learns more from them as a result. -->
+  <GBKT_PlayLeader.degreeDatas.Play_Leader.description>{PAWN_nameDef} knows how to make any game truly fun! Under {PAWN_pronoun}, everyone has more fun while playing games, and learns more from them as a result.</GBKT_PlayLeader.degreeDatas.Play_Leader.description>
+  <!-- EN: Research Assistant -->
+  <GBKT_ResearchAssistant.degreeDatas.Research_Assistant.label>Research Assistant</GBKT_ResearchAssistant.degreeDatas.Research_Assistant.label>
+  <!-- EN: {PAWN_nameDef} is very good at finding random bits of information but not so good at piecing it all together, relying on others for the final step. -->
+  <GBKT_ResearchAssistant.degreeDatas.Research_Assistant.description>{PAWN_nameDef} is very good at finding random bits of information but not so good at piecing it all together, relying on others for the final step.</GBKT_ResearchAssistant.degreeDatas.Research_Assistant.description>
+  <!-- EN: Spastic Fool -->
+  <GBKT_SpasticFool.degreeDatas.Spastic_Fool.label>Spastic Fool</GBKT_SpasticFool.degreeDatas.Spastic_Fool.label>
+  <!-- EN: {PAWN_nameDef}'s crazy and wild antics distract friend and foe alike. -->
+  <GBKT_SpasticFool.degreeDatas.Spastic_Fool.description>{PAWN_nameDef}'s crazy and wild antics distract friend and foe alike.</GBKT_SpasticFool.degreeDatas.Spastic_Fool.description>
+  <!-- EN: Sterilizer -->
+  <GBKT_Sterilizer.degreeDatas.Sterilizer.label>Sterilizer</GBKT_Sterilizer.degreeDatas.Sterilizer.label>
+  <!-- EN: {PAWN_nameDef} has an obsessive need to keep EVERYTHING. SPOTLESS. No germs allowed! But at least it is easier to treat illness and injuries in such a clean environment. -->
+  <GBKT_Sterilizer.degreeDatas.Sterilizer.description>{PAWN_nameDef} has an obsessive need to keep EVERYTHING. SPOTLESS. No germs allowed! But at least it is easier to treat illness and injuries in such a clean environment.</GBKT_Sterilizer.degreeDatas.Sterilizer.description>
+  <!-- EN: Taskmaster -->
+  <GBKT_Taskmaster.degreeDatas.Taskmaster.label>Taskmaster</GBKT_Taskmaster.degreeDatas.Taskmaster.label>
+  <!-- EN: {PAWN_nameDef} hates doing work themselves and prefers to assign burdensome tasks to others. Why do it yourself when you are skilled at leading others to do it for you? -->
+  <GBKT_Taskmaster.degreeDatas.Taskmaster.description>{PAWN_nameDef} hates doing work themselves and prefers to assign burdensome tasks to others. Why do it yourself when you are skilled at leading others to do it for you?</GBKT_Taskmaster.degreeDatas.Taskmaster.description>
+  <!-- EN: Teacher -->
+  <GBKT_Teacher.degreeDatas.Teacher.label>Teacher</GBKT_Teacher.degreeDatas.Teacher.label>
+  <!-- EN: Others often go to {PAWN_nameDef} to learn and improve their own skills. {PAWN_pronoun} is so good at passing on knowledge, in fact, that they end up spending all of their time doing so - and nothing else. -->
+  <GBKT_Teacher.degreeDatas.Teacher.description>Others often go to {PAWN_nameDef} to learn and improve their own skills. {PAWN_pronoun} is so good at passing on knowledge, in fact, that they end up spending all of their time doing so - and nothing else.</GBKT_Teacher.degreeDatas.Teacher.description>
+</LanguageData>

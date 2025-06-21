@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Fighting A Fire -->
+  <GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-0.label>Fighting A Fire</GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-0.label>
+  <!-- EN: You shall not burn! -->
+  <GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-0.description>You shall not burn!</GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-0.description>
+  <!-- EN: Fighting A Fire -->
+  <GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-1.label>Fighting A Fire</GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-1.label>
+  <!-- EN: You shall not burn! -->
+  <GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-1.description>You shall not burn!</GBKT_FireBrigadierFightingAFire.stages.Fighting_A_Fire-1.description>
+  <!-- EN: Play Leader Not In Recreation Room -->
+  <GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-0.label>Play Leader Not In Recreation Room</GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-0.label>
+  <!-- EN: This is not a good place to play games -->
+  <GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-0.description>This is not a good place to play games</GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-0.description>
+  <!-- EN: Play Leader Not In Recreation Room -->
+  <GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-1.label>Play Leader Not In Recreation Room</GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-1.label>
+  <!-- EN: This is not a good place to play games -->
+  <GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-1.description>This is not a good place to play games</GBKT_PlayLeaderNotInRecRoom.stages.Play_Leader_Not_In_Recreation_Room-1.description>
+  <!-- EN: Spastic Fool -->
+  <MoodOffsetSpasticFool.stages.Spastic_Fool.label>Spastic Fool</MoodOffsetSpasticFool.stages.Spastic_Fool.label>
+  <!-- EN: Natural bonus from 'Spastic Fool' trait. -->
+  <MoodOffsetSpasticFool.stages.Spastic_Fool.description>Natural bonus from 'Spastic Fool' trait.</MoodOffsetSpasticFool.stages.Spastic_Fool.description>
+</LanguageData>

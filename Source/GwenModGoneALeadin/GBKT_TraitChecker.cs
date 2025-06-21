@@ -73,15 +73,15 @@ public class GBKT_TraitChecker : WorldComponent
 
                     if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
                     {
-                        var PawnsCurrentJob = pawn.CurJobDef.ToString();
+                        var pawnsCurrentJob = pawn.CurJobDef.ToString();
                         var room = pawn.GetRoom(RegionType.Set_Passable);
-                        if (PawnsCurrentJob == "Clean" && room.Role != RoomRoleDefOf.Hospital)
+                        if (pawnsCurrentJob == "Clean" && room.Role != RoomRoleDefOf.Hospital)
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_SterilizerCleaning, GBKT_BodyPartDef);
                         }
 
-                        if (PawnsCurrentJob == "Clean" && room.Role == RoomRoleDefOf.Hospital)
+                        if (pawnsCurrentJob == "Clean" && room.Role == RoomRoleDefOf.Hospital)
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBKT_DefinitionTypes_Hediff.GBKT_SterilizerCleaning2, GBKT_BodyPartDef);
@@ -135,13 +135,13 @@ public class GBKT_TraitChecker : WorldComponent
                                 //Fire Brigadier   
                                 if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_FireBrigadier)
                                 {
-                                    var PawnsCurrentJob = "Null";
+                                    var pawnsCurrentJob = "Null";
                                     if (possibleFacPawn.CurJobDef != null)
                                     {
-                                        PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                        pawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
                                     }
 
-                                    if (PawnsCurrentJob is "TriggerFirefoamPopper" or "BeatFire" or "ExtinguishSelf")
+                                    if (pawnsCurrentJob is "TriggerFirefoamPopper" or "BeatFire" or "ExtinguishSelf")
                                     {
                                         _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_FireBrigadierNear, GBKT_BodyPartDef);
@@ -175,13 +175,13 @@ public class GBKT_TraitChecker : WorldComponent
                                         GBKT_DefinitionTypes_Hediff.GBKT_DamselInTrouble, GBKT_BodyPartDef);
                                 }
 
-                                var PawnsCurrentJob = "Null";
+                                var pawnsCurrentJob = "Null";
                                 if (possibleFacPawn.CurJobDef != null)
                                 {
-                                    PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    pawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
                                 }
 
-                                if (PawnsCurrentJob == "TendPatient" && possibleFacPawn.CurJob.targetA == pawn)
+                                if (pawnsCurrentJob == "TendPatient" && possibleFacPawn.CurJob.targetA == pawn)
                                 {
                                     _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                         GBKT_DefinitionTypes_Hediff.GBKT_DamselBeingTended, GBKT_BodyPartDef);
@@ -223,13 +223,13 @@ public class GBKT_TraitChecker : WorldComponent
                                 //PLAY LEADER 
                                 if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_PlayLeader)
                                 {
-                                    var PawnsCurrentJoyKind = "Null";
+                                    var pawnsCurrentJoyKind = "Null";
                                     if (possibleFacPawn.CurJobDef.joyKind != null)
                                     {
-                                        PawnsCurrentJoyKind = possibleFacPawn.CurJobDef.joyKind.ToString();
+                                        pawnsCurrentJoyKind = possibleFacPawn.CurJobDef.joyKind.ToString();
                                     }
 
-                                    if (PawnsCurrentJoyKind != "Null")
+                                    if (pawnsCurrentJoyKind != "Null")
                                     {
                                         _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_PlayLeaderNear, GBKT_BodyPartDef);
@@ -275,15 +275,15 @@ public class GBKT_TraitChecker : WorldComponent
                                 //Sterilizer
                                 if (traitDef == GBKT_DefinitionTypes_Traits.GBKT_Sterilizer)
                                 {
-                                    var PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                    var pawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
                                     _ = pawn.CurJobDef.ToString();
                                     var room = pawn.GetRoom(RegionType.Set_Passable);
                                     if (possibleFacPawn.CurJobDef != null)
                                     {
-                                        PawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
+                                        pawnsCurrentJob = possibleFacPawn.CurJobDef.ToString();
                                     }
 
-                                    if (!pawn.Downed && !pawn.InBed() && PawnsCurrentJob == "TendPatient")
+                                    if (!pawn.Downed && !pawn.InBed() && pawnsCurrentJob == "TendPatient")
                                     {
                                         _ = HediffGiverUtility.TryApply(possibleFacPawn,
                                             GBKT_DefinitionTypes_Hediff.GBKT_SterilizerNearby, GBKT_BodyPartDef);

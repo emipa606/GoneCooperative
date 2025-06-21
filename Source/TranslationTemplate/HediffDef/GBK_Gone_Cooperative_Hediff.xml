@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: A Beast Master is Near -->
+  <GBKT_BeastMasterNear.label>A Beast Master is Near</GBKT_BeastMasterNear.label>
+  <!-- EN: A Beast Master is Near -->
+  <GBKT_BeastMasterNear.description>A Beast Master is Near</GBKT_BeastMasterNear.description>
+  <!-- EN: A Near by Beast Master -->
+  <GBKT_BeastMasterNear.labelNoun>A Near by Beast Master</GBKT_BeastMasterNear.labelNoun>
+  <!-- EN: A Beast Master is Working With Bonded Animals -->
+  <GBKT_BeastMasterWorkingWithBondeds.label>A Beast Master is Working With Bonded Animals</GBKT_BeastMasterWorkingWithBondeds.label>
+  <!-- EN: A Beast Master is Working With Bonded Animals -->
+  <GBKT_BeastMasterWorkingWithBondeds.description>A Beast Master is Working With Bonded Animals</GBKT_BeastMasterWorkingWithBondeds.description>
+  <!-- EN: Beast Master Working With Bonded Animals -->
+  <GBKT_BeastMasterWorkingWithBondeds.labelNoun>Beast Master Working With Bonded Animals</GBKT_BeastMasterWorkingWithBondeds.labelNoun>
+  <!-- EN: A Blabbermouth is In The Colony -->
+  <GBKT_BlabbermouthNear.label>A Blabbermouth is In The Colony</GBKT_BlabbermouthNear.label>
+  <!-- EN: A Blabbermouth is In The Colony -->
+  <GBKT_BlabbermouthNear.description>A Blabbermouth is In The Colony</GBKT_BlabbermouthNear.description>
+  <!-- EN: A Colony Blabbermouth -->
+  <GBKT_BlabbermouthNear.labelNoun>A Colony Blabbermouth</GBKT_BlabbermouthNear.labelNoun>
+  <!-- EN: A Bodyguard is Near -->
+  <GBKT_BodyguardNear.label>A Bodyguard is Near</GBKT_BodyguardNear.label>
+  <!-- EN: A Bodyguard is Near -->
+  <GBKT_BodyguardNear.description>A Bodyguard is Near</GBKT_BodyguardNear.description>
+  <!-- EN: A Near by Bodyguard -->
+  <GBKT_BodyguardNear.labelNoun>A Near by Bodyguard</GBKT_BodyguardNear.labelNoun>
+  <!-- EN: A Cheer Leader is Near -->
+  <GBKT_CheerLeaderNear.label>A Cheer Leader is Near</GBKT_CheerLeaderNear.label>
+  <!-- EN: A Cheer Leader is Near -->
+  <GBKT_CheerLeaderNear.description>A Cheer Leader is Near</GBKT_CheerLeaderNear.description>
+  <!-- EN: A Near by Cheer Leader -->
+  <GBKT_CheerLeaderNear.labelNoun>A Near by Cheer Leader</GBKT_CheerLeaderNear.labelNoun>
+  <!-- EN: A Creative Planner is Near -->
+  <GBKT_CreativePlannerNear.label>A Creative Planner is Near</GBKT_CreativePlannerNear.label>
+  <!-- EN: A Creative Planner is Near -->
+  <GBKT_CreativePlannerNear.description>A Creative Planner is Near</GBKT_CreativePlannerNear.description>
+  <!-- EN: A Near by Creative Planner -->
+  <GBKT_CreativePlannerNear.labelNoun>A Near by Creative Planner</GBKT_CreativePlannerNear.labelNoun>
+  <!-- EN: Is Tending A Damsel -->
+  <GBKT_DamselBeingTended.label>Is Tending A Damsel</GBKT_DamselBeingTended.label>
+  <!-- EN: Is Tending A Damsel -->
+  <GBKT_DamselBeingTended.description>Is Tending A Damsel</GBKT_DamselBeingTended.description>
+  <!-- EN: A Damsel Is Being Tended -->
+  <GBKT_DamselBeingTended.labelNoun>A Damsel Is Being Tended</GBKT_DamselBeingTended.labelNoun>
+  <!-- EN: A Damsel is In Trouble -->
+  <GBKT_DamselInTrouble.label>A Damsel is In Trouble</GBKT_DamselInTrouble.label>
+  <!-- EN: A Damsel is In Trouble -->
+  <GBKT_DamselInTrouble.description>A Damsel is In Trouble</GBKT_DamselInTrouble.description>
+  <!-- EN: A Troubled Damsel -->
+  <GBKT_DamselInTrouble.labelNoun>A Troubled Damsel</GBKT_DamselInTrouble.labelNoun>
+  <!-- EN: A Fire Brigadier is Near -->
+  <GBKT_FireBrigadierNear.label>A Fire Brigadier is Near</GBKT_FireBrigadierNear.label>
+  <!-- EN: A Fire Brigadier is Near -->
+  <GBKT_FireBrigadierNear.description>A Fire Brigadier is Near</GBKT_FireBrigadierNear.description>
+  <!-- EN: A Near by Fire Brigadier -->
+  <GBKT_FireBrigadierNear.labelNoun>A Near by Fire Brigadier</GBKT_FireBrigadierNear.labelNoun>
+  <!-- EN: A Gibbering Pawn is Near -->
+  <GBKT_GibberingBase.label>A Gibbering Pawn is Near</GBKT_GibberingBase.label>
+  <!-- EN: A Gibbering Pawn is Near -->
+  <GBKT_GibberingBase.description>A Gibbering Pawn is Near</GBKT_GibberingBase.description>
+  <!-- EN: A Near by Gibbering Pawn -->
+  <GBKT_GibberingBase.labelNoun>A Near by Gibbering Pawn</GBKT_GibberingBase.labelNoun>
+  <!-- EN: A Gibbering Pawn is Near -->
+  <GBKT_GibberingNear.label>A Gibbering Pawn is Near</GBKT_GibberingNear.label>
+  <!-- EN: A Gibbering Pawn is Near -->
+  <GBKT_GibberingNear.description>A Gibbering Pawn is Near</GBKT_GibberingNear.description>
+  <!-- EN: A Near by Gibbering Pawn -->
+  <GBKT_GibberingNear.labelNoun>A Near by Gibbering Pawn</GBKT_GibberingNear.labelNoun>
+  <!-- EN: A Melee Commander is Near -->
+  <GBKT_MeleeCommanderNear.label>A Melee Commander is Near</GBKT_MeleeCommanderNear.label>
+  <!-- EN: A Melee Commander is Near -->
+  <GBKT_MeleeCommanderNear.description>A Melee Commander is Near</GBKT_MeleeCommanderNear.description>
+  <!-- EN: A Near by Melee Commander -->
+  <GBKT_MeleeCommanderNear.labelNoun>A Near by Melee Commander</GBKT_MeleeCommanderNear.labelNoun>
+  <!-- EN: A Cavalry Master is Adjacent -->
+  <GBKT_OutriderAdjacent.label>A Cavalry Master is Adjacent</GBKT_OutriderAdjacent.label>
+  <!-- EN: A Cavalry Master is Adjacent -->
+  <GBKT_OutriderAdjacent.description>A Cavalry Master is Adjacent</GBKT_OutriderAdjacent.description>
+  <!-- EN: An Adjacent by Cavalry Master -->
+  <GBKT_OutriderAdjacent.labelNoun>An Adjacent by Cavalry Master</GBKT_OutriderAdjacent.labelNoun>
+  <!-- EN: A Cavalry Master is Near -->
+  <GBKT_OutriderNear.label>A Cavalry Master is Near</GBKT_OutriderNear.label>
+  <!-- EN: A Cavalry Master is Near -->
+  <GBKT_OutriderNear.description>A Cavalry Master is Near</GBKT_OutriderNear.description>
+  <!-- EN: A Near by Cavalry Master -->
+  <GBKT_OutriderNear.labelNoun>A Near by Cavalry Master</GBKT_OutriderNear.labelNoun>
+  <!-- EN: A Play Leader is Near -->
+  <GBKT_PlayLeaderNear.label>A Play Leader is Near</GBKT_PlayLeaderNear.label>
+  <!-- EN: A Play Leader is Near -->
+  <GBKT_PlayLeaderNear.description>A Play Leader is Near</GBKT_PlayLeaderNear.description>
+  <!-- EN: A Near by Play Leader -->
+  <GBKT_PlayLeaderNear.labelNoun>A Near by Play Leader</GBKT_PlayLeaderNear.labelNoun>
+  <!-- EN: A Research Assistant is Near -->
+  <GBKT_ResearchAssistantNear.label>A Research Assistant is Near</GBKT_ResearchAssistantNear.label>
+  <!-- EN: A Research Assistant is Near -->
+  <GBKT_ResearchAssistantNear.description>A Research Assistant is Near</GBKT_ResearchAssistantNear.description>
+  <!-- EN: A Near by Research Assistant -->
+  <GBKT_ResearchAssistantNear.labelNoun>A Near by Research Assistant</GBKT_ResearchAssistantNear.labelNoun>
+  <!-- EN: A Spastic Fool is Near -->
+  <GBKT_SpasticFoolNear.label>A Spastic Fool is Near</GBKT_SpasticFoolNear.label>
+  <!-- EN: A Spastic Fool is Near -->
+  <GBKT_SpasticFoolNear.description>A Spastic Fool is Near</GBKT_SpasticFoolNear.description>
+  <!-- EN: A Near by Spastic Fool -->
+  <GBKT_SpasticFoolNear.labelNoun>A Near by Spastic Fool</GBKT_SpasticFoolNear.labelNoun>
+  <!-- EN: A Sterilizer is Cleaning -->
+  <GBKT_SterilizerCleaning.label>A Sterilizer is Cleaning</GBKT_SterilizerCleaning.label>
+  <!-- EN: A Sterilizer is Cleaning -->
+  <GBKT_SterilizerCleaning.description>A Sterilizer is Cleaning</GBKT_SterilizerCleaning.description>
+  <!-- EN: A Cleaning Sterilizer -->
+  <GBKT_SterilizerCleaning.labelNoun>A Cleaning Sterilizer</GBKT_SterilizerCleaning.labelNoun>
+  <!-- EN: A Sterilizer is Cleaning A Hospital Room -->
+  <GBKT_SterilizerCleaning2.label>A Sterilizer is Cleaning A Hospital Room</GBKT_SterilizerCleaning2.label>
+  <!-- EN: A Sterilizer is Cleaning A Hospital Room -->
+  <GBKT_SterilizerCleaning2.description>A Sterilizer is Cleaning A Hospital Room</GBKT_SterilizerCleaning2.description>
+  <!-- EN: A Cleaning Sterilizer -->
+  <GBKT_SterilizerCleaning2.labelNoun>A Cleaning Sterilizer</GBKT_SterilizerCleaning2.labelNoun>
+  <!-- EN: A Sterilizer is Near -->
+  <GBKT_SterilizerNearby.label>A Sterilizer is Near</GBKT_SterilizerNearby.label>
+  <!-- EN: A Sterilizer is Near -->
+  <GBKT_SterilizerNearby.description>A Sterilizer is Near</GBKT_SterilizerNearby.description>
+  <!-- EN: A Near by Sterilizer -->
+  <GBKT_SterilizerNearby.labelNoun>A Near by Sterilizer</GBKT_SterilizerNearby.labelNoun>
+  <!-- EN: A Sterilizer is Near -->
+  <GBKT_SterilizerNearby2.label>A Sterilizer is Near</GBKT_SterilizerNearby2.label>
+  <!-- EN: A Sterilizer is Near -->
+  <GBKT_SterilizerNearby2.description>A Sterilizer is Near</GBKT_SterilizerNearby2.description>
+  <!-- EN: A Near by Sterilizer -->
+  <GBKT_SterilizerNearby2.labelNoun>A Near by Sterilizer</GBKT_SterilizerNearby2.labelNoun>
+  <!-- EN: A Taskmaster is Near -->
+  <GBKT_TaskmasterNear.label>A Taskmaster is Near</GBKT_TaskmasterNear.label>
+  <!-- EN: A Taskmaster is Near -->
+  <GBKT_TaskmasterNear.description>A Taskmaster is Near</GBKT_TaskmasterNear.description>
+  <!-- EN: A Near by Taskmaster -->
+  <GBKT_TaskmasterNear.labelNoun>A Near by Taskmaster</GBKT_TaskmasterNear.labelNoun>
+  <!-- EN: A Teacher is Near -->
+  <GBKT_TeacherNear.label>A Teacher is Near</GBKT_TeacherNear.label>
+  <!-- EN: A Teacher is Near -->
+  <GBKT_TeacherNear.description>A Teacher is Near</GBKT_TeacherNear.description>
+  <!-- EN: A Near by Teacher -->
+  <GBKT_TeacherNear.labelNoun>A Near by Teacher</GBKT_TeacherNear.labelNoun>
+  <!-- EN: A Teacher is Near -->
+  <GBKT_TeacherNear2.label>A Teacher is Near</GBKT_TeacherNear2.label>
+  <!-- EN: A Teacher is Near -->
+  <GBKT_TeacherNear2.description>A Teacher is Near</GBKT_TeacherNear2.description>
+  <!-- EN: A Near by Teacher -->
+  <GBKT_TeacherNear2.labelNoun>A Near by Teacher</GBKT_TeacherNear2.labelNoun>
+</LanguageData>

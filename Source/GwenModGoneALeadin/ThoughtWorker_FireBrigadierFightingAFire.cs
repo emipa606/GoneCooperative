@@ -8,28 +8,15 @@ public class ThoughtWorker_FireBrigadierFightingAFire : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn pawn)
     {
-        var PawnsCurrentJob = pawn.CurJobDef.ToString();
-        if (!pawn.Spawned)
+        var pawnsCurrentJob = pawn.CurJobDef.ToString();
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
         {
             return ThoughtState.Inactive;
         }
 
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (PawnsCurrentJob == "TriggerFirefoamPopper" || PawnsCurrentJob == "BeatFire" ||
-            PawnsCurrentJob == "ExtinguishSelf")
-        {
-            return ThoughtState.ActiveAtStage(0);
-        }
-
-        return ThoughtState.Inactive;
+        return pawnsCurrentJob is "TriggerFirefoamPopper" or "BeatFire" or "ExtinguishSelf"
+            ? ThoughtState.ActiveAtStage(0)
+            : ThoughtState.Inactive;
     }
 }

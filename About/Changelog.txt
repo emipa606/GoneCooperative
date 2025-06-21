@@ -1,5 +1,8 @@
 # Changelog for GoneCooperative
 
+1.6.0 - Mod updated for 1.6 and passed autotests
+
+
 1.5.3 - SHould work better with races that have non normal backstories, like ve androids
 
 

@@ -6,11 +6,11 @@ namespace GBKT_Gone_Cooperative_ThoughtWorkers;
 
 public class ThoughtWorker_FireBrigadierFightingAFire : ThoughtWorker
 {
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var pawnsCurrentJob = pawn.CurJobDef.ToString();
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
+        var pawnsCurrentJob = p.CurJobDef.ToString();
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
         {
             return ThoughtState.Inactive;
         }

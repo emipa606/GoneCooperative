@@ -6,7 +6,6 @@ namespace GBKT_DefinitionTypes;
 [DefOf]
 public static class GBKT_DefinitionTypes_Hediff
 {
-    //  public static HediffDef GBKT_TestHediff;
     public static HediffDef GBKT_TaskmasterNear;
     public static HediffDef GBKT_MeleeCommanderNear;
     public static HediffDef GBKT_BodyguardNear;

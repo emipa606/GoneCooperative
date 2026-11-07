@@ -8,11 +8,11 @@ public class ThoughtWorker_PlayLEaderNotInARecRoom : ThoughtWorker
 {
     private static readonly RoomRoleDef recRoom = DefDatabase<RoomRoleDef>.GetNamed("RecRoom");
 
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
+        var room = p.GetRoom(RegionType.Set_Passable);
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBKT_DefinitionTypes_Traits.GBKT_PlayLeader))
         {
             return ThoughtState.Inactive;
         }

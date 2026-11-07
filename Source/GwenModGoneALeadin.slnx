@@ -3,4 +3,19 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="GwenModGoneALeadin/GwenModGoneALeadin.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/TraitDefs/">
+    <File Path="../1.7/Defs/TraitDefs/GBK_Gone_Cooperative_Traits.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThoughtDefs/">
+    <File Path="../1.7/Defs/ThoughtDefs/GBKT_Gone_Cooperative_Thoughts_Situation_Traits.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/HedeffDeffs/">
+    <File Path="../1.7/Defs/HedeffDeffs/GBK_Gone_Cooperative_Hediff.xml" />
+  </Folder>
 </Solution>
